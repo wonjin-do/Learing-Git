@@ -23,12 +23,15 @@ git log -p //수정사항 상세확인(자세함)
 //시간여행
 git log를 통해 버전ID를 구한다.
 git checkout 버전ID
-git checkout master
+git checkout master //현재로 돌아온다
 
-//
+//버전삭제(기본이 mix옵션)
+//되돌아간 커밋버전 이후에 있는 버전들은 모두 삭제됨
+git reset --hard //바로 이전 버전으로 이동
+git reset --hard 커밋ID //커밋ID버전으로 이동
 
-
-
-git reset --hard //이전 버전으로 이동
+//버전삭제(말만 삭제지 커밋기록은 남겨두고 삭제된 듯이 타겟커밋으로 이동)
+//최신커밋부터 타겟커밋 바로 뒤 커밋까지 순서대로 revert를 해줘야 충돌이 안일어남
+git revert <타겟커밋의 바로 뒤 커밋ID>
 
 ~~~
